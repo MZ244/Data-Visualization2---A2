@@ -1,0 +1,63 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Butterfly chart showing the number of marriages and marriage rate from 2003 to 2023 in Australia.",
+    "title": {
+      "text": "Number of Marriage and Rate (2003-2023)",
+      "fontSize": 14,
+      "anchor": "middle"},
+    "data": {
+      "url": "https://raw.githubusercontent.com/MZ244/Data-Visualization2--A2/refs/heads/main/Number%20of%20marriages%20registered%20and%20crude%20marriage%20rate%2C%20Australia%2C%202003-2023%20(a)(b)(c).csv",
+      "format": {"type": "csv"}
+    },
+    "hconcat": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Marriage numbers",
+            "type": "quantitative",
+            "title": "Number of Marriages",
+            "scale": {"reverse": true}  
+          },
+          "y": {
+            "field": "Year",
+            "type": "ordinal",
+            "title": "Year",
+            "sort" : "descending"
+          },
+          "tooltip": [
+            {"field": "Year", "type": "ordinal", "title": "Year"},
+            {"field": "Marriage numbers", "type": "quantitative", "title": "Marriage Numbers"}
+          ],
+          "color": {"value": "#1f77b4"} 
+        },
+        "width": 350,
+        "height": 500
+      },
+      {
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Marriage rate",
+            "type": "quantitative",
+            "title": "Marriage Rate (per 1000 people)"
+          },
+          "y": {
+            "field": "Year",
+            "type": "ordinal",
+            "axis": {"labels": false, "title": null},  
+            "title": null,
+            "sort" : "descending"
+          },
+          "tooltip": [
+          {"field": "Year", "type": "ordinal", "title": "Year"},
+          {"field": "Marriage rate", "type": "quantitative", "title": "Marriage Rate"}
+        ],
+          "color": {"value": "#ff7f0e"}  
+        },
+        "width": 350,
+        "height": 500
+      }
+    ]
+  }
+  

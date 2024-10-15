@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Marriage and Divorce in Australia</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google font -->
+    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0.25.0"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+</head>
+
+<body>
+    <div class="page">
+        <!-- Page Header -->
+        <div class="pure-g header">
+            <div class="pure-u-1">
+                <h1>Marriages and Divorce in Australia</h1>
+            </div>
+        </div>
+
+        <!-- Map with text-->
+        <div class="chart-container">
+            <div class="pure-g vis-wrapper">
+                <div class="pure-u-1-2 vis-container">
+                    <h2>Map of Marriages by State</h2>
+                    <div id="map1"></div>
+                </div>
+                <div class="pure-u-1-2 vis-description">
+                    <p>
+                        Illustratating how marriages will be distributed geographically throughout the states of Australia in 2023. 
+                        States are labeled according to color, with darker reds denoting more marriages. 
+                        The dropdown can be used to evaluate monthly changes and show how marriage trends vary by location over the course of the year.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Line Chart with Text -->
+        <div class="chart-container">
+            <div class="pure-g vis-wrapper">
+                <div class="pure-u-1-2 vis-container">
+                    <h2>Number of Marriages by Year</h2>
+                    <div id="linechart1"></div>
+                </div>
+                <div class="pure-u-1-2 vis-description">
+                    <p>
+                        Showing yearly trends in marriages across Australian states from 2019 to 2022. 
+                        The line chart highlights significant shifts, including the drop during the 2020 pandemic, allowing for 
+                        easy comparison between states and identifying areas of consistent growth or decline.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Butterfly Chart with Text  -->
+        <div class="chart-container">
+            <div class="pure-g vis-wrapper">
+                <div class="pure-u-1-2 vis-container">
+                    <h2>Butterfly Chart of Marriage Rates</h2>
+                    <div id="butterfly_chart"></div>
+                </div>
+                <div class="pure-u-1-2 vis-description">
+                    <p>
+                        Comparing the total number of marriages and the marriage rate per 1,000 people from 2003 to 2023. 
+                        The left side shows absolute marriage numbers, while the right visualizes population-adjusted rates, 
+                        offering insights into whether changes in marriage numbers are driven by population size or behavioral shifts.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Bubble Plot with Text  -->
+        <div class="chart-container">
+            <div class="pure-g vis-wrapper">
+                <div class="pure-u-1-2 vis-container">
+                    <h2>Bubble Plot of Divorces</h2>
+                    <div id="bubble_plot"></div>
+                </div>
+                <div class="pure-u-1-2 vis-description">
+                    <p>
+                        The relationship between the divorce rate and the number of divorces in Australia from 2003 to 2023. 
+                        Each bubble represents a year, with bubble size indicating the total number of divorces and position
+                         reflecting the divorce rate per 1,000 people, providing a clear overview of divorce trends over the years.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+    <!-- Vega Lite Embed Scripts -->
+    <script type="text/javascript">
+        var spec1 = "./map1.vg.json";
+        var spec2 = "./bubble_plot.vg.json";
+        var spec3 = "./butterfly_chart.vg.json";
+        var spec4 = "./linechart1.vg.json";
+
+        vegaEmbed('#map1', spec1, { "actions": false });
+        vegaEmbed('#bubble_plot', spec2, { "actions": false });
+        vegaEmbed('#butterfly_chart', spec3, { "actions": false });
+        vegaEmbed('#linechart1', spec4, { "actions": false });
+    </script>
+</body>
+
+</html>

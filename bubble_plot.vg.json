@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the divorce rate and numbers from 2003 to 2023 in Australia.",
+    "title": {
+      "text": "Number of Divorce granted and crude divorce rate (2003-2023)",
+      "fontSize": 14,
+      "anchor": "middle"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/MZ244/Data-Visualization2--A2/refs/heads/main/Number%20of%20divorces%20granted%20and%20crude%20divorce%20rate%2C%20Australia%202003-2023%20(a)(b)(c).csv",
+      "format": {"type": "csv"}
+    },
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "Divorce rate",
+        "type": "quantitative",
+        "title": "Divorce Rate (per 1000 people)",
+        "scale": {"domain": [2.2, 3.5]}
+      },
+      "y": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year",
+        "sort": "descending"  
+      },
+      "size": {
+        "field": "Divorce numbers",
+        "type": "quantitative",
+        "title": "Number of Divorces"
+      },
+      "color": {
+        "field": "Year",  
+        "type": "ordinal",
+        "title": "Year",
+        "scale": {"scheme": "category10"}  
+      },
+      "tooltip": [
+        {"field": "Year", "type": "ordinal", "title": "Year"},
+        {"field": "Divorce numbers", "type": "quantitative", "title": "Number of Divorces"},
+        {"field": "Divorce rate", "type": "quantitative", "title": "Divorce Rate"}
+      ]
+    },
+    "width": 700,
+    "height": 400
+  }
+  

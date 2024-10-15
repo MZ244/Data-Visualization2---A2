@@ -1,0 +1,85 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A line chart showing the number of marriages from 2019 to 2022 for selected Australian states.",
+    "title": {
+      "text": "Number of Marriages by State (2019-2022)",
+      "fontSize": 14,
+      "anchor": "middle"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/MZ244/Data-Visualization2--A2/refs/heads/main/cleaned_number_of_marriages_2019_2023.csv",
+      "format": {"type": "csv"}
+    },
+    "params": [
+      {
+        "name": "state_selection",
+        "value": "All",
+        "bind": {
+          "input": "select",
+          "options": [
+            "All",
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory"
+          ],
+          "name": "State: "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": "state_selection == 'All' || datum.States == state_selection"
+      },
+      {
+        "fold": ["2019", "2020", "2021", "2022"],
+        "as": ["Year", "Marriages"]
+      }
+    ],
+    "mark":{
+    "type": "line",
+    "point": true },
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      "y": {
+        "field": "Marriages",
+        "type": "quantitative",
+        "title": "Number of Marriages"
+      },
+      "color": {
+        "field": "States",
+        "type": "nominal",
+        "legend": {
+          "title": "State"
+        }
+      },
+      "tooltip": [
+        {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        {
+          "field": "Marriages",
+          "type": "quantitative",
+          "title": "Number of Marriages"
+        },
+        {
+          "field": "States",
+          "type": "nominal",
+          "title": "State"
+        }
+      ]
+    },
+    "width": 700,
+    "height": 400
+  }
+  
