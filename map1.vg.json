@@ -27,7 +27,7 @@
       }
     ],
     "data": {
-      "url": "https://raw.githubusercontent.com/MZ244/Data-Visualization2--A2/refs/heads/main/australia_ne_50m_admin_1_states_provinces.topojson",
+      "url": "https://raw.githubusercontent.com/MZ244/Data-Visualization2---A2/refs/heads/main/australia_ne_50m_admin_1_states_provinces.topojson",
       "format": {
         "type": "topojson",
         "feature": "australia_ne_50m_admin_1_states_provinces"
@@ -40,7 +40,7 @@
             "lookup": "properties.name",
             "from": {
               "data": {
-                "url": "https://raw.githubusercontent.com/MZ244/Data-Visualization2--A2/refs/heads/main/Monthy%20Occurence%20by%20state%20or%20territory%20of%20registeration%202023.csv",
+                "url": "https://raw.githubusercontent.com/MZ244/Data-Visualization2---A2/refs/heads/main/Monthy%20Occurence%20by%20state%20or%20territory%20of%20registeration%202023.csv",
                 "format": {"type": "csv"}
               },
               "key": "States",
